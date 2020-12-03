@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0' 
+use_frameworks!
+
+target 'DiaryApp' do
+ 	        pod 'IQKeyboardManagerSwift'
+        pod 'Alamofire', '~> 4.7'
+        pod 'SwiftyJSON'
+        pod 'JQProgressHUD'
+        pod 'TimelineCards'
+  end

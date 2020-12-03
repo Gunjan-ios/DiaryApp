@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.9.1)
+  - IQKeyboardManagerSwift (6.5.6)
+  - JQProgressHUD (2.7)
+  - SwiftyJSON (5.0.0)
+  - TimelineCards (1.0.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - IQKeyboardManagerSwift
+  - JQProgressHUD
+  - SwiftyJSON
+  - TimelineCards
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - IQKeyboardManagerSwift
+    - JQProgressHUD
+    - SwiftyJSON
+    - TimelineCards
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  JQProgressHUD: 45463f7760f004e5c259c2b912a704b5b5b32732
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TimelineCards: 8f3377fbe40ae587b5ad9e6d29dd7e6d2654e418
+
+PODFILE CHECKSUM: 2ebdc66200061d38570ff7ec60cdc9ee17aebda5
+
+COCOAPODS: 1.9.3

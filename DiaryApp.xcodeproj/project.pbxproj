@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180EF0782579569700D611B4 /* DairyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EF0772579569700D611B4 /* DairyData.swift */; };
 		18B3685225793E9500C1E609 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3685125793E9500C1E609 /* AppDelegate.swift */; };
 		18B3685425793E9500C1E609 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3685325793E9500C1E609 /* SceneDelegate.swift */; };
 		18B3685625793E9500C1E609 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3685525793E9500C1E609 /* ViewController.swift */; };
@@ -15,6 +16,20 @@
 		18B3685E25793E9900C1E609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B3685C25793E9900C1E609 /* LaunchScreen.storyboard */; };
 		18B3686925793E9900C1E609 /* DiaryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3686825793E9900C1E609 /* DiaryAppTests.swift */; };
 		18B3687425793E9900C1E609 /* DiaryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3687325793E9900C1E609 /* DiaryAppUITests.swift */; };
+		18B3688225793EE100C1E609 /* ParentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3688125793EE100C1E609 /* ParentClass.swift */; };
+		18B3689025793EFE00C1E609 /* WebServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3688A25793EFE00C1E609 /* WebServicesManager.swift */; };
+		18B3694825794A4300C1E609 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3693C25794A4300C1E609 /* GeneralConstants.swift */; };
+		18B3694F25794A4300C1E609 /* ExzUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3694325794A4300C1E609 /* ExzUtilities.swift */; };
+		18B3695025794A4300C1E609 /* CS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3694425794A4300C1E609 /* CS.swift */; };
+		18B3695125794A4300C1E609 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3694525794A4300C1E609 /* Utils.swift */; };
+		18B3695325794C3A00C1E609 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3695225794C3A00C1E609 /* Extensions.swift */; };
+		18B3695825794ECA00C1E609 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3695725794ECA00C1E609 /* TimelineTableViewController.swift */; };
+		18B3696325794F5500C1E609 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3695D25794F5500C1E609 /* TimelineTableViewCell.swift */; };
+		18B3696425794F5500C1E609 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3695E25794F5500C1E609 /* Timeline.swift */; };
+		18B3696525794F5500C1E609 /* TimelinePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3696025794F5500C1E609 /* TimelinePoint.swift */; };
+		18B3696625794F5500C1E609 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B3696125794F5500C1E609 /* TimelineTableViewCell.xib */; };
+		18B36969257951E700C1E609 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B36968257951E700C1E609 /* Hud.swift */; };
+		1AA2C01A85D02C42897030DD /* Pods_DiaryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4794960E4DE0CEAB2A422D /* Pods_DiaryApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		086C5BEE65A787160C7E7561 /* Pods-DiaryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryApp.debug.xcconfig"; path = "Target Support Files/Pods-DiaryApp/Pods-DiaryApp.debug.xcconfig"; sourceTree = "<group>"; };
+		180EF0772579569700D611B4 /* DairyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DairyData.swift; sourceTree = "<group>"; };
 		18B3684E25793E9500C1E609 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B3685125793E9500C1E609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B3685325793E9500C1E609 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +66,23 @@
 		18B3686F25793E9900C1E609 /* DiaryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiaryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B3687325793E9900C1E609 /* DiaryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAppUITests.swift; sourceTree = "<group>"; };
 		18B3687525793E9900C1E609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B3688125793EE100C1E609 /* ParentClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentClass.swift; sourceTree = "<group>"; };
+		18B3688A25793EFE00C1E609 /* WebServicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesManager.swift; sourceTree = "<group>"; };
+		18B3693C25794A4300C1E609 /* GeneralConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
+		18B3694325794A4300C1E609 /* ExzUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExzUtilities.swift; sourceTree = "<group>"; };
+		18B3694425794A4300C1E609 /* CS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CS.swift; sourceTree = "<group>"; };
+		18B3694525794A4300C1E609 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		18B3695225794C3A00C1E609 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		18B3695725794ECA00C1E609 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		18B3695D25794F5500C1E609 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		18B3695E25794F5500C1E609 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		18B3695F25794F5500C1E609 /* TimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCell.h; sourceTree = "<group>"; };
+		18B3696025794F5500C1E609 /* TimelinePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinePoint.swift; sourceTree = "<group>"; };
+		18B3696125794F5500C1E609 /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
+		18B3696225794F5500C1E609 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B36968257951E700C1E609 /* Hud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
+		9E4794960E4DE0CEAB2A422D /* Pods_DiaryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiaryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB3CBA71B80E197644ABB85C /* Pods-DiaryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryApp.release.xcconfig"; path = "Target Support Files/Pods-DiaryApp/Pods-DiaryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA2C01A85D02C42897030DD /* Pods_DiaryApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180EF0762579568900D611B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				180EF0772579569700D611B4 /* DairyData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		18B3684525793E9500C1E609 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +126,8 @@
 				18B3686725793E9900C1E609 /* DiaryAppTests */,
 				18B3687225793E9900C1E609 /* DiaryAppUITests */,
 				18B3684F25793E9500C1E609 /* Products */,
+				C67FC9251DBAE5F4BA585E39 /* Pods */,
+				AE5B46968EA83BD668C0F126 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +144,10 @@
 		18B3685025793E9500C1E609 /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
-				18B3685125793E9500C1E609 /* AppDelegate.swift */,
-				18B3685325793E9500C1E609 /* SceneDelegate.swift */,
-				18B3685525793E9500C1E609 /* ViewController.swift */,
+				180EF0762579568900D611B4 /* Model */,
+				18B368EB257944DC00C1E609 /* SupportFiles */,
+				18B3695925794F2500C1E609 /* Lib */,
+				18B368EA257944C300C1E609 /* Classes */,
 				18B3685725793E9500C1E609 /* Main.storyboard */,
 				18B3685A25793E9900C1E609 /* Assets.xcassets */,
 				18B3685C25793E9900C1E609 /* LaunchScreen.storyboard */,
@@ -128,6 +174,119 @@
 			path = DiaryAppUITests;
 			sourceTree = "<group>";
 		};
+		18B3688325793EFE00C1E609 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				18B3688A25793EFE00C1E609 /* WebServicesManager.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		18B368E825793F4C00C1E609 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				18B3685325793E9500C1E609 /* SceneDelegate.swift */,
+				18B3685125793E9500C1E609 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		18B368E925793F6600C1E609 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18B3695725794ECA00C1E609 /* TimelineTableViewController.swift */,
+				18B3685525793E9500C1E609 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18B368EA257944C300C1E609 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				18B3688125793EE100C1E609 /* ParentClass.swift */,
+				18B3688325793EFE00C1E609 /* Webservice */,
+				18B368E925793F6600C1E609 /* Controller */,
+				18B368E825793F4C00C1E609 /* AppDelegate */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		18B368EB257944DC00C1E609 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				18B3693925794A4300C1E609 /* Helpers */,
+				18B369102579452100C1E609 /* Utils */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		18B369102579452100C1E609 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				18B3695425794D9700C1E609 /* HUD */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		18B3693925794A4300C1E609 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				18B3695225794C3A00C1E609 /* Extensions.swift */,
+				18B3693C25794A4300C1E609 /* GeneralConstants.swift */,
+				18B3694325794A4300C1E609 /* ExzUtilities.swift */,
+				18B3694425794A4300C1E609 /* CS.swift */,
+				18B3694525794A4300C1E609 /* Utils.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		18B3695425794D9700C1E609 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				18B36968257951E700C1E609 /* Hud.swift */,
+			);
+			name = HUD;
+			path = ../../../../../WORK/Exzellent/Exzellent/Utils/HUD;
+			sourceTree = "<group>";
+		};
+		18B3695925794F2500C1E609 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				18B3695C25794F5500C1E609 /* TimelineTableViewCell */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		18B3695C25794F5500C1E609 /* TimelineTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18B3695D25794F5500C1E609 /* TimelineTableViewCell.swift */,
+				18B3695E25794F5500C1E609 /* Timeline.swift */,
+				18B3695F25794F5500C1E609 /* TimelineTableViewCell.h */,
+				18B3696025794F5500C1E609 /* TimelinePoint.swift */,
+				18B3696125794F5500C1E609 /* TimelineTableViewCell.xib */,
+				18B3696225794F5500C1E609 /* Info.plist */,
+			);
+			path = TimelineTableViewCell;
+			sourceTree = "<group>";
+		};
+		AE5B46968EA83BD668C0F126 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E4794960E4DE0CEAB2A422D /* Pods_DiaryApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C67FC9251DBAE5F4BA585E39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				086C5BEE65A787160C7E7561 /* Pods-DiaryApp.debug.xcconfig */,
+				FB3CBA71B80E197644ABB85C /* Pods-DiaryApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18B3687825793E9900C1E609 /* Build configuration list for PBXNativeTarget "DiaryApp" */;
 			buildPhases = (
+				26917D14936D5887418BAB2F /* [CP] Check Pods Manifest.lock */,
 				18B3684A25793E9500C1E609 /* Sources */,
 				18B3684B25793E9500C1E609 /* Frameworks */,
 				18B3684C25793E9500C1E609 /* Resources */,
+				5CC540603C36DDD88F009BEE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B3696625794F5500C1E609 /* TimelineTableViewCell.xib in Resources */,
 				18B3685E25793E9900C1E609 /* LaunchScreen.storyboard in Resources */,
 				18B3685B25793E9900C1E609 /* Assets.xcassets in Resources */,
 				18B3685925793E9500C1E609 /* Main.storyboard in Resources */,
@@ -254,14 +416,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26917D14936D5887418BAB2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiaryApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CC540603C36DDD88F009BEE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiaryApp/Pods-DiaryApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiaryApp/Pods-DiaryApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiaryApp/Pods-DiaryApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18B3684A25793E9500C1E609 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B3688225793EE100C1E609 /* ParentClass.swift in Sources */,
+				18B3694F25794A4300C1E609 /* ExzUtilities.swift in Sources */,
+				18B3696325794F5500C1E609 /* TimelineTableViewCell.swift in Sources */,
 				18B3685625793E9500C1E609 /* ViewController.swift in Sources */,
+				18B3689025793EFE00C1E609 /* WebServicesManager.swift in Sources */,
+				18B36969257951E700C1E609 /* Hud.swift in Sources */,
 				18B3685225793E9500C1E609 /* AppDelegate.swift in Sources */,
+				18B3695325794C3A00C1E609 /* Extensions.swift in Sources */,
+				18B3696425794F5500C1E609 /* Timeline.swift in Sources */,
+				18B3694825794A4300C1E609 /* GeneralConstants.swift in Sources */,
+				18B3695025794A4300C1E609 /* CS.swift in Sources */,
 				18B3685425793E9500C1E609 /* SceneDelegate.swift in Sources */,
+				18B3695825794ECA00C1E609 /* TimelineTableViewController.swift in Sources */,
+				180EF0782579569700D611B4 /* DairyData.swift in Sources */,
+				18B3695125794A4300C1E609 /* Utils.swift in Sources */,
+				18B3696525794F5500C1E609 /* TimelinePoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +649,7 @@
 		};
 		18B3687925793E9900C1E609 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 086C5BEE65A787160C7E7561 /* Pods-DiaryApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +668,7 @@
 		};
 		18B3687A25793E9900C1E609 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB3CBA71B80E197644ABB85C /* Pods-DiaryApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
