@@ -11,28 +11,9 @@ import SwiftyJSON
 //import TimelineTableViewCell
 
 class TimelineTableViewController: UITableViewController {
-    
-    // TimelinePoint, Timeline back color, title, description, lineInfo, thumbnails, illustration
-//    let data:[Int: [(TimelinePoint, UIColor, String, String, String?, [String]?, String?)]] = [0:[
-//            (TimelinePoint(), UIColor.black, "12:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", nil, nil, "Sun"),
-//            (TimelinePoint(), UIColor.black, "15:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", nil, nil, "Sun"),
-//            (TimelinePoint(color: UIColor.green, filled: true), UIColor.green, "16:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "150 mins", ["Apple"], "Sun"),
-//            (TimelinePoint(), UIColor.clear, "19:00", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", nil, nil, "Moon")
-//        ], 1:[
-//            (TimelinePoint(), UIColor.lightGray, "08:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "60 mins", nil, "Sun"),
-//            (TimelinePoint(), UIColor.lightGray, "09:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "30 mins", nil, "Sun"),
-//            (TimelinePoint(), UIColor.lightGray, "10:00", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "90 mins", nil, "Sun"),
-//            (TimelinePoint(), UIColor.lightGray, "11:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "60 mins", nil, "Sun"),
-//            (TimelinePoint(color: UIColor.lightGray, filled: true), UIColor.red, "12:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "30 mins", ["Apple", "Apple", "Apple", "Apple"], "Sun"),
-//            (TimelinePoint(color: UIColor.lightGray, filled: true), UIColor.red, "13:00", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "120 mins", ["Apple", "Apple", "Apple", "Apple", "Apple"], "Sun"),
-//            (TimelinePoint(color: UIColor.lightGray, filled: true), UIColor.lightGray, "15:00", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "150 mins", ["Apple", "Apple"], "Sun"),
-//            (TimelinePoint(), UIColor.lightGray, "17:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "60 mins", nil, "Sun"),
-//            (TimelinePoint(), UIColor.lightGray, "18:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "60 mins", nil, "Moon"),
-//            (TimelinePoint(), UIColor.lightGray, "19:30", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "30 mins", nil, "Moon"),
-//            (TimelinePoint(), backColor: UIColor.lightGray, "20:00", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", nil, nil, "Moon")
-//        ]]
-    var Maindata : [DiaryData]! = [DiaryData]()
 
+
+    var groupArray: [[DiaryData]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,24 +23,33 @@ class TimelineTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        apiCallingFuncation()
+        if ParentClass.shared.mainData.count > 0 {
+            groupArray = ParentClass.shared.mainData.groupSort(byDate: { ParentClass.shared.dateConvert(date: $0.date)})
+            print(groupArray)
+            print(groupArray.count)
+
+        }else{
+            apiCallingFuncation()
+
+        }
+
+
         let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
         self.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
+
+
     }
 
     func apiCallingFuncation(){
 
         WebServicesManager .getDirayData( onCompletion: { response in
 
-            let Array = response!.arrayValue
-            for Json in Array{
-                let data = DiaryData.init(fromJson: Json)
-                self.Maindata.append(data)
+            for Json in response!.arrayValue{
+                let rowData = DiaryData.init(fromJson: Json)
+                ParentClass.shared.mainData.append(rowData)
             }
             self.tableView.reloadData()
-//                ParentClass.shared.saveJSON(json:response!, key: CS.Saved.DiaryData)
-//                self.performSegue(withIdentifier:CS.Segue.goHome , sender: self)
-
+            ParentClass.shared.setJSON(json: ParentClass.shared.mainData, key: CS.Saved.DiaryData)
 
         },onError:{ error in
 
@@ -77,113 +67,67 @@ class TimelineTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return groupArray.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        guard let sectionData = data[section] else {
-//            return 0
-//        }
-        return 1
+        var count : Int! = 0
+        for row in [groupArray[section]]{
+            count = row.count
+        }
+        print(count as Any)
+        return count
     }
-    
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Day " + String(describing: section + 1)
+
+        var count : Int! = 0
+         let lable = UILabel()
+        for row in [groupArray[section][0]]{
+            lable.text = row.date
+        }
+        return lable.text
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as! TimelineTableViewCell
-
-        // Configure the cell...
-        
-//        guard let sectionData = data[indexPath.section] else {
-//            return cell
-//        }
-        
-//        let (timelinePoint, timelineBackColor, title, description, lineInfo, thumbnails, illustration) = sectionData[indexPath.row]
-//        var timelineFrontColor = UIColor.clear
-//        if (indexPath.row > 0) {
-//            timelineFrontColor = data[indexPath.row - 1]
-//        }
-//        cell.timelinePoint = timelinePoint
-//        cell.timeline.frontColor = timelineFrontColor
-//        cell.timeline.backColor = timelineBackColor
-//        cell.titleLabel.text = title
-//        cell.descriptionLabel.text = description
-//        cell.lineInfoLabel.text = lineInfo
-        
-//        if let thumbnails = thumbnails {
-//            cell.viewsInStackView = thumbnails.map { thumbnail in
-//                return UIImageView(image: UIImage(named: thumbnail))
-//            }
-//        }
-//        else {
-//            cell.viewsInStackView = []
-//        }
-
-//        if let illustration = illustration {
-//            cell.illustrationImageView.image = UIImage(named: illustration)
-//        }
-//        else {
-//            cell.illustrationImageView.image = nil
-//        }
-//
+        print(groupArray[indexPath.section][indexPath.row].id)
+        cell.descriptionLabel.text = groupArray[indexPath.section][indexPath.row].content
+        cell.titleLabel.text =  groupArray[indexPath.section][indexPath.row].title
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let sectionData = data[indexPath.section] else {
-//            return
-//        }
-//
-//        print(sectionData[indexPath.row])
+        //        guard let sectionData = data[indexPath.section] else {
+        //            return
+        //        }
+        //
+
+        print(groupArray[indexPath.section][indexPath.row].title)
     }
-    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+
+
+}
+extension Sequence {
+    func groupSort(ascending: Bool = true, byDate dateKey: (Iterator.Element) -> Date) -> [[Iterator.Element]] {
+        var categories: [[Iterator.Element]] = []
+        for element in self {
+            let key = dateKey(element)
+            guard let dayIndex = categories.index(where: { $0.contains(where: { Calendar.current.isDate(dateKey($0), inSameDayAs: key) }) }) else {
+                guard let nextIndex = categories.index(where: { $0.contains(where: { dateKey($0).compare(key) == (ascending ? .orderedDescending : .orderedAscending) }) }) else {
+                    categories.append([element])
+                    continue
+                }
+                categories.insert([element], at: nextIndex)
+                continue
+            }
+            guard let nextIndex = categories[dayIndex].index(where: { dateKey($0).compare(key) == (ascending ? .orderedDescending : .orderedAscending) }) else {
+                categories[dayIndex].append(element)
+                continue
+            }
+            categories[dayIndex].insert(element, at: nextIndex)
+        }
+        return categories
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

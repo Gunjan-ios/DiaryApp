@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var open_count = Int()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let strData = ParentClass.shared.getDataJSON(key:CS.Saved.DiaryData)
+        if strData.count > 0{
+            ParentClass.shared.mainData = strData
+        }
+
         // Override point for customization after application launch.
         return true
     }

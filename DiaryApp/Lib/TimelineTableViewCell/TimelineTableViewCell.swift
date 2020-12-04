@@ -98,20 +98,20 @@ open class TimelineTableViewCell: UITableViewCell {
             view.removeFromSuperview()
         }
         
-        let views = viewsInStackView.count <= maxNumSubviews ? viewsInStackView : Array(viewsInStackView[0..<maxNumSubviews])
-        views.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.addConstraint(NSLayoutConstraint(item: view,
-                                                  attribute: NSLayoutConstraint.Attribute.width,
-                                                  relatedBy: NSLayoutConstraint.Relation.equal,
-                                                  toItem: view,
-                                                  attribute: NSLayoutConstraint.Attribute.height,
-                                                  multiplier: 1,
-                                                  constant: 0))
-            view.contentMode = .scaleAspectFill
-            view.clipsToBounds = true
-            stackView.addArrangedSubview(view)
-        }
+//        let views = viewsInStackView.count <= maxNumSubviews ? viewsInStackView : Array(viewsInStackView[0..<maxNumSubviews+5])
+//        views.forEach { view in
+//            view.translatesAutoresizingMaskIntoConstraints = false
+//            view.addConstraint(NSLayoutConstraint(item: view,
+//                                                  attribute: NSLayoutConstraint.Attribute.width,
+//                                                  relatedBy: NSLayoutConstraint.Relation.equal,
+//                                                  toItem: view,
+//                                                  attribute: NSLayoutConstraint.Attribute.height,
+//                                                  multiplier: 1,
+//                                                  constant: 0))
+//            view.contentMode = .scaleAspectFill
+//            view.clipsToBounds = true
+//            stackView.addArrangedSubview(view)
+//        }
         
         let diffNumViews = viewsInStackView.count - maxNumSubviews
         if diffNumViews > 0 {
