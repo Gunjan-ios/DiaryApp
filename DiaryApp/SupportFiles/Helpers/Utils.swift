@@ -44,7 +44,7 @@ class Utils: NSObject {
         let subString = splitdate.first!
         let newDate = String(subString)
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
 
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "yyyy-MM-dd"

@@ -16,7 +16,8 @@ open class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak open var lineInfoLabel: UILabel!
     @IBOutlet weak internal var stackView: UIStackView!
     @IBOutlet weak open var illustrationImageView: UIImageView!
-    
+    @IBOutlet weak var btnDelete: UIButton!
+
     @IBOutlet weak var titleLabelLeftMargin: NSLayoutConstraint!
     @IBOutlet weak var lineInfoLabelRightMargin: NSLayoutConstraint!
     @IBOutlet weak var descriptionMargin: NSLayoutConstraint!
@@ -46,14 +47,18 @@ open class TimelineTableViewCell: UITableViewCell {
             self.setNeedsDisplay()
         }
     }
-    
-    open var bubbleColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)
+
+
+//    open var bubbleColor = UIColor(red: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)
+    open var bubbleColor = UIColor.clear
+
     open var bubbleEnabled = true
 
     fileprivate lazy var maxNumSubviews = Int(floor(stackView.frame.size.width / (stackView.frame.size.height + stackView.spacing))) - 1
     
     override open func awakeFromNib() {
         super.awakeFromNib()
+        btnDelete.layer.cornerRadius = btnDelete.bounds.height/2
         // Initialization code
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,10 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var open_count = Int()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //stored data in model
         let strData = ParentClass.shared.getDataJSON(key:CS.Saved.DiaryData)
         if strData.count > 0{
             ParentClass.shared.mainData = strData
         }
+
+        //textfiled
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.shouldToolbarUsesTextFieldTintColor = true
 
         // Override point for customization after application launch.
         return true

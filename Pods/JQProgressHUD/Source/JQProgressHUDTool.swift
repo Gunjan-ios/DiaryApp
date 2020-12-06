@@ -99,5 +99,6 @@ open class JQProgressHUDTool: NSObject {
     
     public class func jq_hideHUD(view: UIView? = UIApplication.shared.windows.last) {
         let _ = JQProgressHUD.hideHUD(fromView: view!)
+
     }
 }

@@ -283,6 +283,7 @@ extension JQProgressHUD {
             return false
         }
         hud.removeToast(t: nil)
+        hud.removeFromSuperview()
         return true
     }
     

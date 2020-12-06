@@ -19,12 +19,6 @@ class ParentClass: UIViewController{
 
     var APP = UIApplication.shared.delegate as! AppDelegate
     var window: UIWindow?
-    var iPhone_SE:Bool = false
-    var iPhone_X_Top_Padding:CGFloat = 0
-    var iPhone_X_Bottom_Padding:CGFloat = 0
-    var token : String!
-    var saveListArray : [[String : Any]] = [[String:Any]]()
-    var saveListArray1 : [JSON] = [JSON]()
     var lblSubTitle : UILabel!
     //    var mainData : DiaryData!
     var mainData : [DiaryData] = [DiaryData]()
@@ -33,9 +27,8 @@ class ParentClass: UIViewController{
     {
         super.viewDidLoad()
 
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .white
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        //        self.navigationController?.isNavigationBarHidden = true
         let imgNav = UIView (frame: CGRect (x: 0, y: 0, width: SCREEN_WIDTH, height: STATUS_BAR_HEIGHT))
         imgNav.backgroundColor = colorPrimary
         self.view.addSubview(imgNav)
